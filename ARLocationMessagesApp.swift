@@ -12,6 +12,11 @@ struct ARLocationMessagesApp: App {
     var body: some Scene {
         WindowGroup{
             TabView {
+                MapView()
+                    .tabItem {
+                        Image(systemName: "mappin.and.ellipse")
+                        Text("Map")
+                    }
                 ARView()
                     .tabItem {
                         Image(systemName: "arkit")

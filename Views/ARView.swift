@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ARView: View {
     var body: some View {
-        ARViewController()
+        ARViewControllerRepresentable().edgesIgnoringSafeArea(.all)
     }
 }
 
