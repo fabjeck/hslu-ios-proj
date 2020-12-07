@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00BE6F04257E456300EEB5C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F03257E456300EEB5C5 /* AppDelegate.swift */; };
 		00BE6F06257E456300EEB5C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F05257E456300EEB5C5 /* ContentView.swift */; };
 		00BE6F08257E456300EEB5C5 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F07257E456300EEB5C5 /* Experience.rcproject */; };
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
-		00BE6F0D257E456300EEB5C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F0C257E456300EEB5C5 /* Preview Assets.xcassets */; };
+		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002B6240257E6B990068AD79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		002B6241257E6B990068AD79 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		00BE6F00257E456300EEB5C5 /* ARLocationMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLocationMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		00BE6F03257E456300EEB5C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00BE6F05257E456300EEB5C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		00BE6F07257E456300EEB5C5 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		00BE6F0C257E456300EEB5C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocationMessagesApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,15 @@
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
-				00BE6F02257E456300EEB5C5 /* ARLocationMessages */,
+				00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */,
+				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
+				00BE6F0E257E456300EEB5C5 /* Info.plist */,
+				00C27903257E6ECA001CF6DE /* Views */,
+				00C27902257E6EBA001CF6DE /* ViewModels */,
+				00C27904257E6EF3001CF6DE /* Models */,
+				00C2790A257E7255001CF6DE /* Resources */,
+				002B6240257E6B990068AD79 /* README.md */,
+				002B6241257E6B990068AD79 /* LICENSE */,
 				00BE6F01257E456300EEB5C5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,25 +59,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		00BE6F02257E456300EEB5C5 /* ARLocationMessages */ = {
+		00C27902257E6EBA001CF6DE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				00BE6F03257E456300EEB5C5 /* AppDelegate.swift */,
-				00BE6F05257E456300EEB5C5 /* ContentView.swift */,
-				00BE6F07257E456300EEB5C5 /* Experience.rcproject */,
-				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
-				00BE6F0E257E456300EEB5C5 /* Info.plist */,
-				00BE6F0B257E456300EEB5C5 /* Preview Content */,
 			);
-			path = ARLocationMessages;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		00BE6F0B257E456300EEB5C5 /* Preview Content */ = {
+		00C27903257E6ECA001CF6DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				00BE6F0C257E456300EEB5C5 /* Preview Assets.xcassets */,
+				00BE6F05257E456300EEB5C5 /* ContentView.swift */,
 			);
-			path = "Preview Content";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		00C27904257E6EF3001CF6DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		00C2790A257E7255001CF6DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00BE6F07257E456300EEB5C5 /* Experience.rcproject */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +146,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00BE6F0D257E456300EEB5C5 /* Preview Assets.xcassets in Resources */,
 				00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,8 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
 				00BE6F06257E456300EEB5C5 /* ContentView.swift in Sources */,
-				00BE6F04257E456300EEB5C5 /* AppDelegate.swift in Sources */,
 				00BE6F08257E456300EEB5C5 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,10 +288,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ARLocationMessages/Preview Content\"";
 				DEVELOPMENT_TEAM = 2TC27KG84K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ARLocationMessages/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,10 +308,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"ARLocationMessages/Preview Content\"";
 				DEVELOPMENT_TEAM = 2TC27KG84K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ARLocationMessages/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
