@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00BE6F06257E456300EEB5C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F05257E456300EEB5C5 /* ContentView.swift */; };
-		00BE6F08257E456300EEB5C5 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F07257E456300EEB5C5 /* Experience.rcproject */; };
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
 		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
+		00C27919257E7F33001CF6DE /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27918257E7F33001CF6DE /* ARView.swift */; };
+		00C27923257E8DFC001CF6DE /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27922257E8DFC001CF6DE /* ARSCNViewController.swift */; };
+		00C27928257E9350001CF6DE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27927257E9350001CF6DE /* ARViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		002B6240257E6B990068AD79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		002B6241257E6B990068AD79 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		00BE6F00257E456300EEB5C5 /* ARLocationMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLocationMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		00BE6F05257E456300EEB5C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		00BE6F07257E456300EEB5C5 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocationMessagesApp.swift; sourceTree = "<group>"; };
+		00C27918257E7F33001CF6DE /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		00C27922257E8DFC001CF6DE /* ARSCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
+		00C27927257E9350001CF6DE /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,7 @@
 				00C27903257E6ECA001CF6DE /* Views */,
 				00C27902257E6EBA001CF6DE /* ViewModels */,
 				00C27904257E6EF3001CF6DE /* Models */,
-				00C2790A257E7255001CF6DE /* Resources */,
+				00C27921257E8DD4001CF6DE /* Controllers */,
 				002B6240257E6B990068AD79 /* README.md */,
 				002B6241257E6B990068AD79 /* LICENSE */,
 				00BE6F01257E456300EEB5C5 /* Products */,
@@ -69,7 +71,7 @@
 		00C27903257E6ECA001CF6DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				00BE6F05257E456300EEB5C5 /* ContentView.swift */,
+				00C27918257E7F33001CF6DE /* ARView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,12 +83,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		00C2790A257E7255001CF6DE /* Resources */ = {
+		00C27921257E8DD4001CF6DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00BE6F07257E456300EEB5C5 /* Experience.rcproject */,
+				00C27922257E8DFC001CF6DE /* ARSCNViewController.swift */,
+				00C27927257E9350001CF6DE /* ARViewController.swift */,
 			);
-			path = Resources;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C27923257E8DFC001CF6DE /* ARSCNViewController.swift in Sources */,
 				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
-				00BE6F06257E456300EEB5C5 /* ContentView.swift in Sources */,
-				00BE6F08257E456300EEB5C5 /* Experience.rcproject in Sources */,
+				00C27919257E7F33001CF6DE /* ARView.swift in Sources */,
+				00C27928257E9350001CF6DE /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

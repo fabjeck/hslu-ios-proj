@@ -10,8 +10,14 @@ import SwiftUI
 @main
 struct ARLocationMessagesApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup{
+            TabView {
+                ARView()
+                    .tabItem {
+                        Image(systemName: "arkit")
+                        Text("AR View")
+                    }
+            }
         }
     }
 }
