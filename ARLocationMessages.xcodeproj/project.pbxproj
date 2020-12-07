@@ -23,8 +23,6 @@
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocationMessagesApp.swift; sourceTree = "<group>"; };
-		C92CEFD1257E8BD200B8B36B /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapboxMobileEvents.framework; path = "../../../../Downloads/mapbox-ios-sdk-dynamic-with-events/dynamic/MapboxMobileEvents.framework"; sourceTree = "<group>"; };
-		C92CEFD2257E8BD200B8B36B /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = "../../../../Downloads/mapbox-ios-sdk-dynamic-with-events/dynamic/Mapbox.framework"; sourceTree = "<group>"; };
 		C92CEFD4257E8C4F00B8B36B /* MapboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapboxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,8 +40,6 @@
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
-				C92CEFD2257E8BD200B8B36B /* Mapbox.framework */,
-				C92CEFD1257E8BD200B8B36B /* MapboxMobileEvents.framework */,
 				00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */,
 				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
 				00BE6F0E257E456300EEB5C5 /* Info.plist */,
@@ -298,7 +294,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7URQ5CG6MN;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -319,7 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7URQ5CG6MN;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
