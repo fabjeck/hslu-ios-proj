@@ -9,10 +9,30 @@
 /* Begin PBXBuildFile section */
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
 		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
+		C92CEFD5257E8C4F00B8B36B /* MapboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CEFD4257E8C4F00B8B36B /* MapboxView.swift */; };
+		C9DC28B5257E93D200F8363A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; };
+		C9DC28B6257E93D200F8363A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C9DC28B7257E93D400F8363A /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */; };
+		C9DC28B8257E93D400F8363A /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00C27919257E7F33001CF6DE /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27918257E7F33001CF6DE /* ARView.swift */; };
 		00C27923257E8DFC001CF6DE /* ARSCNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27922257E8DFC001CF6DE /* ARSCNViewController.swift */; };
 		00C27928257E9350001CF6DE /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27927257E9350001CF6DE /* ARViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C95C2B02257E915000200BF6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9DC28B8257E93D400F8363A /* MapboxMobileEvents.framework in Embed Frameworks */,
+				C9DC28B6257E93D200F8363A /* Mapbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		002B6240257E6B990068AD79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -21,6 +41,9 @@
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLocationMessagesApp.swift; sourceTree = "<group>"; };
+		C92CEFD4257E8C4F00B8B36B /* MapboxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapboxView.swift; sourceTree = "<group>"; };
+		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
+		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		00C27918257E7F33001CF6DE /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 		00C27922257E8DFC001CF6DE /* ARSCNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSCNViewController.swift; sourceTree = "<group>"; };
 		00C27927257E9350001CF6DE /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DC28B7257E93D400F8363A /* MapboxMobileEvents.framework in Frameworks */,
+				C9DC28B5257E93D200F8363A /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +65,8 @@
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
+				C9DC28B2257E93CA00F8363A /* Mapbox.framework */,
+				C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */,
 				00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */,
 				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
 				00BE6F0E257E456300EEB5C5 /* Info.plist */,
@@ -71,6 +98,8 @@
 		00C27903257E6ECA001CF6DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C92CEFD4257E8C4F00B8B36B /* MapboxView.swift */,
+				00BE6F05257E456300EEB5C5 /* ContentView.swift */,
 				00C27918257E7F33001CF6DE /* ARView.swift */,
 			);
 			path = Views;
@@ -102,6 +131,7 @@
 				00BE6EFC257E456300EEB5C5 /* Sources */,
 				00BE6EFD257E456300EEB5C5 /* Frameworks */,
 				00BE6EFE257E456300EEB5C5 /* Resources */,
+				C95C2B02257E915000200BF6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +192,9 @@
 			files = (
 				00C27923257E8DFC001CF6DE /* ARSCNViewController.swift in Sources */,
 				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
+				C92CEFD5257E8C4F00B8B36B /* MapboxView.swift in Sources */,
+				00BE6F06257E456300EEB5C5 /* ContentView.swift in Sources */,
+				00BE6F08257E456300EEB5C5 /* Experience.rcproject in Sources */,
 				00C27919257E7F33001CF6DE /* ARView.swift in Sources */,
 				00C27928257E9350001CF6DE /* ARViewController.swift in Sources */,
 			);
@@ -292,14 +325,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2TC27KG84K;
+				DEVELOPMENT_TEAM = 7URQ5CG6MN;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.hslu.ios.ARLocationMessages;
+				PRODUCT_BUNDLE_IDENTIFIER = ARLocationMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,14 +349,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2TC27KG84K;
+				DEVELOPMENT_TEAM = 7URQ5CG6MN;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.hslu.ios.ARLocationMessages;
+				PRODUCT_BUNDLE_IDENTIFIER = ARLocationMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
