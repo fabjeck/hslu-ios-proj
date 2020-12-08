@@ -26,6 +26,8 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func makeUIView(context: UIViewRepresentableContext<MapViewRepresentable>) -> MGLMapView {
         mapView.delegate = context.coordinator
+        mapView.logoView.isHidden = true
+        mapView.attributionButton.isHidden = true
         return mapView
     }
     
