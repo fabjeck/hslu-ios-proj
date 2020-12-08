@@ -57,6 +57,7 @@
 		00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		00C27943257FA3E8001CF6DE /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		C90C6CC1257FD7F600ADEE56 /* LocationCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCheckerService.swift; sourceTree = "<group>"; };
+		C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagesModel.xcdatamodel; sourceTree = "<group>"; };
 		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +126,7 @@
 		00C27904257E6EF3001CF6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,6 +430,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */,
+			);
+			currentVersion = C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */;
+			path = MessagesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 00BE6EF8257E456200EEB5C5 /* Project object */;
 }
