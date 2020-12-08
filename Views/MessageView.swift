@@ -26,9 +26,13 @@ struct MessageView: View {
                         .border(Color.black)
                 }
                 Spacer()
-                Button("Speichern") {
-                    
-                }.buttonStyle(CustomButtonStyle(.primary))
+                Button(action: {
+                    print("pressed")
+                    LocationCheckerService().addMessageToCore()
+                    vm.toggleModal()
+                }, label: {
+                    Text("Speichern")
+                }).buttonStyle(CustomButtonStyle(.primary))
             }.padding()
                 .navigationBarTitle("Message erfassen", displayMode: .large)
                 .navigationBarItems(leading: Button("Cancel") {
