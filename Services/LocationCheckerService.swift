@@ -15,7 +15,9 @@ class LocationCheckerService {
     
     var closestMessageId = 0
     
-   
+    func getClosestMessageId() -> Int {
+        return self.closestMessageId
+    }
 
     func checkIfMessageInReach(pLatitude: Double, pLongitude: Double){
         let userCoordinates = CLLocation(latitude: pLatitude, longitude: pLongitude)
@@ -27,9 +29,10 @@ class LocationCheckerService {
         }
     }
     
-    func getClosestMessageId() -> Int {
-        return self.closestMessageId
+    func addMessageToCore(){
+        
     }
+    
 }
 
 

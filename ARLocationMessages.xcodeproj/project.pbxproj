@@ -58,6 +58,8 @@
 		00C27943257FA3E8001CF6DE /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		C90C6CC1257FD7F600ADEE56 /* LocationCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCheckerService.swift; sourceTree = "<group>"; };
 		C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagesModel.xcdatamodel; sourceTree = "<group>"; };
+		C90DAB5B2580155E00B402A6 /* MessageLocationCoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataClass.swift; sourceTree = SOURCE_ROOT; };
+		C90DAB5C2580155E00B402A6 /* MessageLocationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataProperties.swift; sourceTree = SOURCE_ROOT; };
 		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +128,8 @@
 		00C27904257E6EF3001CF6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C90DAB5B2580155E00B402A6 /* MessageLocationCoreDataClass.swift */,
+				C90DAB5C2580155E00B402A6 /* MessageLocationCoreDataProperties.swift */,
 				C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */,
 			);
 			path = Models;
