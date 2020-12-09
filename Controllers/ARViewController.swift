@@ -14,6 +14,51 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         return self.view as! ARSCNView
     }
     
+    func createMessageNode(_ message: String) -> SCNNode {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 20),
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        let attributedString = NSAttributedString(string: message, attributes: attrs)
+        
+        let textWidth: CGFloat = 300
+        let constraints = CGSize(width: textWidth, height: .greatestFiniteMagnitude)
+        let rect = attributedString.boundingRect(with: constraints, options: .usesLineFragmentOrigin, context: nil)
+        let aspectRatio: CGFloat = textWidth / rect.height
+        
+        let boxWidth: CGFloat = 0.15
+        let boxHeight: CGFloat = boxWidth / aspectRatio
+        let box = SCNBox(width: boxWidth, height: boxHeight, length: 0.01, chamferRadius: 0.2)
+        
+        let padding: CGFloat = 20
+        let imageWidth: CGFloat = (2 * padding) + textWidth
+        let imageHeight: CGFloat = imageWidth / aspectRatio
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: imageWidth, height: imageHeight))
+        let image = renderer.image { context in
+            UIColor.white.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: imageWidth, height: imageHeight))
+            
+            attributedString.draw(with: CGRect(x: padding, y: padding, width: textWidth, height: rect.height), options: .usesLineFragmentOrigin, context: nil)
+        }
+        
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.white
+        
+        let text = SCNMaterial()
+        text.diffuse.contents = image
+        
+        box.materials = [text, material, material, material, material, material]
+        
+        let messageNode = SCNNode()
+        messageNode.geometry = box
+        messageNode.position = SCNVector3(0, 0, -0.3)
+        return messageNode
+    }
+    
     // MARK: - UIViewController
     
     override func loadView() {
@@ -23,7 +68,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         arView.delegate = self
-        arView.scene = SCNScene()
+        arView.scene.rootNode.addChildNode(createMessageNode("Swift's strings are great for storing plain text, but as soon as you want formatting, images, or interactivity you need to reach for NSAttributedString - Foundation’s all-in-one string handling class. These are used in various places in iOS and macOS, but you're most likely to want to use them with UILabel and UITextView, both of which accept attributed strings directly."))
     }
     
     override func viewWillAppear(_ animated: Bool) {
