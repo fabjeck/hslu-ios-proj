@@ -9,8 +9,8 @@ import SwiftUI
 import CoreLocation
 import CoreData
 
-class PersistenceManager {
-  let persistentContainer: NSPersistentContainer = {
+public class PersistenceManager {
+  public static var persistentContainer: NSPersistentContainer = {
       let container = NSPersistentContainer(name: "MessagesModel")
       container.loadPersistentStores(completionHandler: { (storeDescription, error) in
           if let error = error as NSError? {
@@ -20,25 +20,37 @@ class PersistenceManager {
       })
       return container
   }()
-
-  init() {
-    // save changes when app goes to background
-    let center = NotificationCenter.default
-    let notification = UIApplication.willResignActiveNotification
-
-    center.addObserver(forName: notification, object: nil, queue: nil) { [weak self] _ in
-      guard let self = self else { return }
-
-      if self.persistentContainer.viewContext.hasChanges {
-        try? self.persistentContainer.viewContext.save()
-      }
+    
+    public static var context: NSManagedObjectContext {
+        return persistentContainer.viewContext
     }
-  }
+    
+    public static func saveContext() {
+        let context = persistentContainer.viewContext
+//        let container = NSPersistentContainer(name: "MessagesModel")
+//          print(container.persistentStoreDescriptions.first?.url)
+        if context.hasChanges {
+            do {
+                try
+                    context.save()
+            } catch {
+              // The context couldn't be saved.
+              // ToDo: error handling
+                print(error)
+              let nserror = error as NSError
+              fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+        else {
+            print("no changes found")
+        }
+        
+      }
 }
 
-class LocationCheckerService {
-    static var app: LocationCheckerService = {
-        return LocationCheckerService()
+class MessageService {
+    static var app: MessageService = {
+        return MessageService()
     }()
     
     
@@ -48,8 +60,6 @@ class LocationCheckerService {
         NSSortDescriptor(keyPath: \MessageLocation.latitude, ascending: true)
       ]
     ) var messages: FetchedResults<MessageLocation>
-    
-    @Environment(\.managedObjectContext) var managedObjectContext
     
     var closestMessageId = 0
     
@@ -69,26 +79,15 @@ class LocationCheckerService {
     }
     
     func addMessageToCore(){
-        let newMessage = MessageLocation(context: managedObjectContext)
+        let newMessage = MessageLocation(context: PersistenceManager.persistentContainer.viewContext)
         newMessage.latitude = 47.193027383614385
         newMessage.longitude = 8.483297528099875
         newMessage.messageText = "TestMessage Merc Home"
         
-        //saveContext()
+        PersistenceManager.saveContext()
     }
     
-    func saveContext() {
-        do {
-            try
-                managedObjectContext.save()
-        } catch {
-          // The context couldn't be saved.
-          // ToDo: error handling
-            print(error)
-          let nserror = error as NSError
-          fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-      }
+    
     
 }
 

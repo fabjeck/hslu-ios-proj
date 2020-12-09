@@ -67,7 +67,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     final class Coordinator: NSObject, MGLMapViewDelegate {
         var control: MapViewRepresentable
-        var locationChecker = LocationCheckerService()
+        var locationChecker = MessageService()
         var timer = Timer()
         
         init(_ control: MapViewRepresentable) {

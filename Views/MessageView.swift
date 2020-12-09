@@ -10,6 +10,12 @@ import SwiftUI
 struct MessageView: View {
     var vm: MessageViewModel
     
+    @FetchRequest(
+      entity: MessageLocation.entity(),
+      sortDescriptors: [
+        NSSortDescriptor(keyPath: \MessageLocation.latitude, ascending: true)
+      ]
+    ) var messages: FetchedResults<MessageLocation>
     @State var message: String = ""
     
     var body: some View {
@@ -28,7 +34,7 @@ struct MessageView: View {
                 Spacer()
                 Button(action: {
                     print("pressed")
-                    LocationCheckerService().addMessageToCore()
+                    MessageService().addMessageToCore()
                     vm.toggleModal()
                 }, label: {
                     Text("Speichern")
@@ -38,7 +44,7 @@ struct MessageView: View {
                 .navigationBarItems(leading: Button("Cancel") {
                     vm.toggleModal()
                 })
-        }
+        }.environment(\.managedObjectContext, PersistenceManager.persistentContainer.viewContext)
     }
 }
 
