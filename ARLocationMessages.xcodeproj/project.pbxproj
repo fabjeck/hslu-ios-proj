@@ -18,6 +18,8 @@
 		00C2793E257F7468001CF6DE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2793D257F7468001CF6DE /* MapViewModel.swift */; };
 		00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */; };
 		00C27944257FA3E8001CF6DE /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27943257FA3E8001CF6DE /* MessageViewModel.swift */; };
+		C90C6CC2257FD7F600ADEE56 /* LocationCheckerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC1257FD7F600ADEE56 /* LocationCheckerService.swift */; };
+		C90DAB5D25801A1400B402A6 /* MessagesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */; };
 		C9DC28B5257E93D200F8363A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; };
 		C9DC28B6257E93D200F8363A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9DC28B7257E93D400F8363A /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */; };
@@ -55,6 +57,10 @@
 		00C2793D257F7468001CF6DE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		00C27943257FA3E8001CF6DE /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		C90C6CC1257FD7F600ADEE56 /* LocationCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCheckerService.swift; sourceTree = "<group>"; };
+		C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagesModel.xcdatamodel; sourceTree = "<group>"; };
+		C90DAB5B2580155E00B402A6 /* MessageLocationCoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataClass.swift; sourceTree = SOURCE_ROOT; };
+		C90DAB5C2580155E00B402A6 /* MessageLocationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataProperties.swift; sourceTree = SOURCE_ROOT; };
 		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 				00C27902257E6EBA001CF6DE /* ViewModels */,
 				00C27904257E6EF3001CF6DE /* Models */,
 				00C27921257E8DD4001CF6DE /* Controllers */,
+				C90C6CC0257FD7DC00ADEE56 /* Services */,
 				00C2793F257F7CD0001CF6DE /* Styles */,
 				00C2792C257E970F001CF6DE /* Frameworks */,
 				002B6240257E6B990068AD79 /* README.md */,
@@ -122,6 +129,9 @@
 		00C27904257E6EF3001CF6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C90DAB5B2580155E00B402A6 /* MessageLocationCoreDataClass.swift */,
+				C90DAB5C2580155E00B402A6 /* MessageLocationCoreDataProperties.swift */,
+				C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +159,14 @@
 				00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		C90C6CC0257FD7DC00ADEE56 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C90C6CC1257FD7F600ADEE56 /* LocationCheckerService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90C6CC2257FD7F600ADEE56 /* LocationCheckerService.swift in Sources */,
 				00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */,
 				00C27930257E98FC001CF6DE /* MapView.swift in Sources */,
+				C90DAB5D25801A1400B402A6 /* MessagesModel.xcdatamodeld in Sources */,
 				00C27944257FA3E8001CF6DE /* MessageViewModel.swift in Sources */,
 				00C27923257E8DFC001CF6DE /* ARViewController.swift in Sources */,
 				00C27932257E9E6C001CF6DE /* MapViewRepresentable.swift in Sources */,
@@ -358,7 +378,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2TC27KG84K;
+				DEVELOPMENT_TEAM = 7URQ5CG6MN;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
 				INFOPLIST_FILE = Info.plist;
@@ -416,6 +436,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */,
+			);
+			currentVersion = C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */;
+			path = MessagesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 00BE6EF8257E456200EEB5C5 /* Project object */;
 }

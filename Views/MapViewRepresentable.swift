@@ -67,12 +67,32 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     final class Coordinator: NSObject, MGLMapViewDelegate {
         var control: MapViewRepresentable
+        var locationChecker = LocationCheckerService()
+        var timer = Timer()
         
         init(_ control: MapViewRepresentable) {
             self.control = control
         }
         
-        func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {}
+        func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+            mapView.showsUserLocation = true
+            mapView.userTrackingMode = .follow
+            //start tracking
+            timer =  Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true)
+            {
+                (timer) in
+                self.checkLocationWithMessages(mapView)
+            }
+        }
+        
+        func checkLocationWithMessages(_ mapView: MGLMapView){
+            print(mapView.userLocation?.coordinate ?? "no value")
+            if mapView.userLocation?.coordinate != nil {
+                let userLatitude = (mapView.userLocation?.coordinate.latitude)!
+                let userLongitude = (mapView.userLocation?.coordinate.longitude)!
+                locationChecker.checkIfMessageInReach(pLatitude: userLatitude, pLongitude: userLongitude)
+            }
+        }
         
         func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
             return nil

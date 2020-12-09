@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct ARLocationMessagesApp: App {
+    let persistence = PersistenceManager()
     var body: some Scene {
         WindowGroup{
             TabView {
@@ -26,3 +28,7 @@ struct ARLocationMessagesApp: App {
         }
     }
 }
+
+
+
+
