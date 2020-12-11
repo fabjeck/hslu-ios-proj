@@ -9,6 +9,8 @@ import SwiftUI
 import Mapbox
 
 struct MapView: View {
+    @Environment(\.managedObjectContext) var viewContext
+    
     @ObservedObject var vm = MapViewModel()
     
     @State var annotations: [MGLPointAnnotation] = [
@@ -26,16 +28,17 @@ struct MapView: View {
             .zoomLevel(9)
             .overlay(
                 Button(action: {
-                    vm.toggleModal()
+                    vm.openModal()
                 }, label: {
-                    Text("Nachricht erfassen")
+                    Text("Message verfassen")
                 }).buttonStyle(CustomButtonStyle(.secondary))
                 .padding()
-                .sheet(isPresented: $vm.showMessageView, content: {
-                    MessageView(vm: MessageView.MessageViewModel(showMessageView: $vm.showMessageView))
+                .sheet(isPresented: $vm.show, content: {
+                    MessageView()
+                        .environment(\.managedObjectContext, viewContext)
                 }),
                 alignment: .bottom
-            )
+            ).edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -9,10 +9,15 @@ import SwiftUI
 
 extension MapView {
     class MapViewModel: ObservableObject {
-        @Published var showMessageView = false
+        @Published var show = false
         
-        func toggleModal(){
-            self.showMessageView.toggle()
+        @FetchRequest(
+            entity: Message.entity(),
+            sortDescriptors: []
+        ) var messages: FetchedResults<Message>
+        
+        func openModal() {
+            show = true
         }
     }
 }

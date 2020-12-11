@@ -11,7 +11,8 @@ import CoreData
 @main
 struct ARLocationMessagesApp: App {
     
-    let context = PersistenceManager.persistentContainer.viewContext
+    let viewContext = PersistenceManager.persistentContainer.viewContext
+    
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
@@ -27,18 +28,10 @@ struct ARLocationMessagesApp: App {
                         Image(systemName: "arkit")
                         Text("AR View")
                     }
-            }.environment(\.managedObjectContext, context)
+            }.environment(\.managedObjectContext, viewContext)
         }.onChange(of: scenePhase) { (phase) in
-            switch phase {
-            case .active:
-                print("active")
-            case .inactive:
-                print("inactive")
-            case .background:
-                print("bg")
+            if phase == .background {
                 PersistenceManager.saveContext()
-            @unknown default:
-                print("error in scenechange")
             }
         }
     }

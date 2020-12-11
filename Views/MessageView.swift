@@ -8,48 +8,46 @@
 import SwiftUI
 
 struct MessageView: View {
-    var vm: MessageViewModel
+    @ObservedObject var vm = MessageViewModel()
     
-    @FetchRequest(
-      entity: MessageLocation.entity(),
-      sortDescriptors: [
-        NSSortDescriptor(keyPath: \MessageLocation.latitude, ascending: true)
-      ]
-    ) var messages: FetchedResults<MessageLocation>
-    @State var message: String = ""
+    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var message: String = ""
+    
+    init() {
+        UITextView.appearance().backgroundColor = .clear
+    }
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 Spacer()
-                Group {
-                    Text("Nachricht")
-                        .bold()
-                    TextField("Nachricht eingeben...", text: $message)
-                        .textFieldStyle(DefaultTextFieldStyle())
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 5)
-                        .border(Color.black)
+                ZStack(alignment: .topLeading) {
+                    if message.isEmpty {
+                        TextEditor(text: .constant("Erfasse deine Message..."))
+                            .foregroundColor(Color(UIColor.placeholderText))
+                    }
+                    TextEditor(text: $message)
                 }
                 Spacer()
                 Button(action: {
-                    print("pressed")
-                    MessageService().addMessageToCore()
-                    vm.toggleModal()
+                    MessageService.saveMessage(message, managedObjectContext: viewContext)
+                    presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Speichern")
                 }).buttonStyle(CustomButtonStyle(.primary))
             }.padding()
-                .navigationBarTitle("Message erfassen", displayMode: .large)
+                .navigationBarTitle("Message", displayMode: .large)
                 .navigationBarItems(leading: Button("Cancel") {
-                    vm.toggleModal()
+                    presentationMode.wrappedValue.dismiss()
                 })
-        }.environment(\.managedObjectContext, PersistenceManager.persistentContainer.viewContext)
+        }
     }
 }
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(vm: MessageView.MessageViewModel(showMessageView: .constant(true)))
+        MessageView()
     }
 }

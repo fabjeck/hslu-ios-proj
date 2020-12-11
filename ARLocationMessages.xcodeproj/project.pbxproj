@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0059422B258377C0002B1E25 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059422A258377C0002B1E25 /* MessageService.swift */; };
+		0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */; };
+		0059423525838103002B1E25 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423325838103002B1E25 /* Message+CoreDataClass.swift */; };
+		0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423425838103002B1E25 /* Message+CoreDataProperties.swift */; };
+		00594238258385E0002B1E25 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00594237258385E0002B1E25 /* LocationService.swift */; };
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
 		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
 		00C27919257E7F33001CF6DE /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27918257E7F33001CF6DE /* ARView.swift */; };
@@ -17,9 +22,7 @@
 		00C2793A257F7393001CF6DE /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27939257F7393001CF6DE /* MessageView.swift */; };
 		00C2793E257F7468001CF6DE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2793D257F7468001CF6DE /* MapViewModel.swift */; };
 		00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */; };
-		00C27944257FA3E8001CF6DE /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27943257FA3E8001CF6DE /* MessageViewModel.swift */; };
-		C90C6CC2257FD7F600ADEE56 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC1257FD7F600ADEE56 /* MessageService.swift */; };
-		C90DAB5D25801A1400B402A6 /* MessagesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */; };
+		C90C6CC2257FD7F600ADEE56 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */; };
 		C9DC28B5257E93D200F8363A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; };
 		C9DC28B6257E93D200F8363A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9DC28B7257E93D400F8363A /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */; };
@@ -44,6 +47,11 @@
 /* Begin PBXFileReference section */
 		002B6240257E6B990068AD79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		002B6241257E6B990068AD79 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0059422A258377C0002B1E25 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessageModel.xcdatamodel; sourceTree = "<group>"; };
+		0059423325838103002B1E25 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0059423425838103002B1E25 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		00594237258385E0002B1E25 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		00BE6F00257E456300EEB5C5 /* ARLocationMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLocationMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,11 +64,7 @@
 		00C27939257F7393001CF6DE /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		00C2793D257F7468001CF6DE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
-		00C27943257FA3E8001CF6DE /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
-		00C38DA12580DE85004D93DC /* MessageLocationCoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataProperties.swift; sourceTree = "<group>"; };
-		00C38DA22580DE85004D93DC /* MessageLocationCoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLocationCoreDataClass.swift; sourceTree = "<group>"; };
-		C90C6CC1257FD7F600ADEE56 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
-		C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessagesModel.xcdatamodel; sourceTree = "<group>"; };
+		C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				00C2793D257F7468001CF6DE /* MapViewModel.swift */,
-				00C27943257FA3E8001CF6DE /* MessageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,9 +132,9 @@
 		00C27904257E6EF3001CF6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				00C38DA22580DE85004D93DC /* MessageLocationCoreDataClass.swift */,
-				00C38DA12580DE85004D93DC /* MessageLocationCoreDataProperties.swift */,
-				C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */,
+				0059423325838103002B1E25 /* Message+CoreDataClass.swift */,
+				0059423425838103002B1E25 /* Message+CoreDataProperties.swift */,
+				0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,7 +167,9 @@
 		C90C6CC0257FD7DC00ADEE56 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C90C6CC1257FD7F600ADEE56 /* MessageService.swift */,
+				C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */,
+				0059422A258377C0002B1E25 /* MessageService.swift */,
+				00594237258385E0002B1E25 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -238,18 +243,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90C6CC2257FD7F600ADEE56 /* MessageService.swift in Sources */,
+				C90C6CC2257FD7F600ADEE56 /* PersistanceManager.swift in Sources */,
+				0059422B258377C0002B1E25 /* MessageService.swift in Sources */,
 				00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */,
+				0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */,
 				00C27930257E98FC001CF6DE /* MapView.swift in Sources */,
-				C90DAB5D25801A1400B402A6 /* MessagesModel.xcdatamodeld in Sources */,
-				00C27944257FA3E8001CF6DE /* MessageViewModel.swift in Sources */,
 				00C27923257E8DFC001CF6DE /* ARViewController.swift in Sources */,
 				00C27932257E9E6C001CF6DE /* MapViewRepresentable.swift in Sources */,
+				0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */,
 				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
+				00594238258385E0002B1E25 /* LocationService.swift in Sources */,
 				00C2793A257F7393001CF6DE /* MessageView.swift in Sources */,
 				00C27919257E7F33001CF6DE /* ARView.swift in Sources */,
 				00C27934257EAC4F001CF6DE /* ARViewControllerRepresentable.swift in Sources */,
 				00C2793E257F7468001CF6DE /* MapViewModel.swift in Sources */,
+				0059423525838103002B1E25 /* Message+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7URQ5CG6MN;
+				DEVELOPMENT_TEAM = 2TC27KG84K;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
 				INFOPLIST_FILE = Info.plist;
@@ -438,13 +446,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C90C6CC3257FDC2300ADEE56 /* MessagesModel.xcdatamodeld */ = {
+		0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */,
+				0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */,
 			);
-			currentVersion = C90C6CC4257FDC2300ADEE56 /* MessagesModel.xcdatamodel */;
-			path = MessagesModel.xcdatamodeld;
+			currentVersion = 0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */;
+			path = MessageModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

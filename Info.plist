@@ -27,7 +27,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>The location service is used to determine if a message is close enough to be displayed in the camera</string>
+	<string>The location service is used to determine if a message is close enough to be displayed in AR</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchScreen</key>
