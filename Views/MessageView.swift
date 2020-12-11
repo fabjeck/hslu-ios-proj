@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct MessageView: View {
-    @ObservedObject var vm = MessageViewModel()
-    
     @Environment(\.managedObjectContext) var viewContext
+    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: String = ""
