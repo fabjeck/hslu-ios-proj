@@ -14,8 +14,8 @@ class MessageService {
     static func saveMessage(_ text: String, managedObjectContext: NSManagedObjectContext) {
         let newMessage = Message(context: managedObjectContext)
         newMessage.text = text
-        newMessage.latitude = 47.193027383614385
-        newMessage.longitude = 8.483297528099875
+        newMessage.latitude = LocationService.getUserLatitude()
+        newMessage.longitude = LocationService.getUserLongitude()
         
         do {
             try managedObjectContext.save()

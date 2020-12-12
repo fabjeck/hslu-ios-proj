@@ -8,6 +8,11 @@
 import SwiftUI
 import CoreData
 
+class StoredMessageModel: ObservableObject {
+    static let sharedInstance = StoredMessageModel()
+    @Published var closestMsg: Message?
+}
+
 @main
 struct ARLocationMessagesApp: App {
     
