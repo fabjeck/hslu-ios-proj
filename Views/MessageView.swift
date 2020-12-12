@@ -36,6 +36,7 @@ struct MessageView: View {
                 }, label: {
                     Text("Speichern")
                 }).buttonStyle(CustomButtonStyle(.primary))
+                .disabled(message.isEmpty)
             }.padding()
                 .navigationBarTitle("Message", displayMode: .large)
                 .navigationBarItems(leading: Button("Cancel") {

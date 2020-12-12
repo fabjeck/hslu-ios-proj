@@ -9,16 +9,17 @@ import SwiftUI
 import Mapbox
 
 extension MGLPointAnnotation {
-    convenience init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+    convenience init(coordinate: CLLocationCoordinate2D) {
         self.init()
-        self.title = title
-        self.subtitle = subtitle
         self.coordinate = coordinate
     }
 }
 
 struct MapViewRepresentable: UIViewRepresentable {
-    @Binding var annotations: [MGLPointAnnotation]
+    @FetchRequest(
+        entity: Message.entity(),
+        sortDescriptors: []
+    ) var messages: FetchedResults<Message>
     
     private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.streetsStyleURL)
     
@@ -57,6 +58,8 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     private func updateAnnotations() {
+        let annotations = messages.map({(message) -> MGLPointAnnotation in
+                                        return MGLPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: message.latitude, longitude: message.longitude))})
         if let currentAnnotations = mapView.annotations {
             mapView.removeAnnotations(currentAnnotations)
         }

@@ -11,11 +11,6 @@ extension MapView {
     class MapViewModel: ObservableObject {
         @Published var show = false
         
-        @FetchRequest(
-            entity: Message.entity(),
-            sortDescriptors: []
-        ) var messages: FetchedResults<Message>
-        
         func openModal() {
             show = true
         }
