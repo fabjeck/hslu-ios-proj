@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  ARLocationMessages
+
+  Created by Marc Häusler on 12.12.20.
+  
+  Deutsch
+*/
+// MapView
+"click_here" = "Drück hier";
+"write_msg" = "write message";
+// MessageView
+"save_msg" = "Speichern";
+"write_your_message" = "Erfasse deine Nachricht..";
+"cancel" = "Abbrechen";
+"message" = "Nachricht";

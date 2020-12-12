@@ -26,7 +26,7 @@ struct MessageView: View {
                 Spacer()
                 ZStack(alignment: .topLeading) {
                     if message.isEmpty {
-                        TextEditor(text: .constant("Erfasse deine Message..."))
+                        TextEditor(text: .constant(NSLocalizedString("write_your_message", comment: "")))
                             .foregroundColor(Color(UIColor.placeholderText))
                     }
                     TextEditor(text: $message)
@@ -36,12 +36,12 @@ struct MessageView: View {
                     MessageService.saveMessage(message, location: locationManager.userCoordinates, managedObjectContext: viewContext)
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Text("Speichern")
+                    Text(NSLocalizedString("save_msg", comment: ""))
                 }).buttonStyle(CustomButtonStyle(.primary))
                 .disabled(message.isEmpty)
             }.padding()
-                .navigationBarTitle("Message", displayMode: .large)
-                .navigationBarItems(leading: Button("Cancel") {
+                .navigationBarTitle(NSLocalizedString("message", comment: ""), displayMode: .large)
+                .navigationBarItems(leading: Button(NSLocalizedString("cancel", comment: "")) {
                     presentationMode.wrappedValue.dismiss()
                 })
         }

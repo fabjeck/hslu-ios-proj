@@ -23,6 +23,7 @@
 		00C2793E257F7468001CF6DE /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2793D257F7468001CF6DE /* MapViewModel.swift */; };
 		00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */; };
 		C90C6CC2257FD7F600ADEE56 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */; };
+		C90DAB652585066500B402A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C90DAB672585066500B402A6 /* Localizable.strings */; };
 		C9DC28B5257E93D200F8363A /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; };
 		C9DC28B6257E93D200F8363A /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B2257E93CA00F8363A /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C9DC28B7257E93D400F8363A /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */; };
@@ -65,6 +66,8 @@
 		00C2793D257F7468001CF6DE /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		00C27940257F7D5B001CF6DE /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		C90DAB662585066500B402A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C90DAB682585069900B402A6 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C9DC28B1257E93C700F8363A /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
 		C9DC28B2257E93CA00F8363A /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +88,7 @@
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
+				C90DAB672585066500B402A6 /* Localizable.strings */,
 				00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */,
 				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
 				00BE6F0E257E456300EEB5C5 /* Info.plist */,
@@ -216,6 +220,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 00BE6EF7257E456200EEB5C5;
 			productRefGroup = 00BE6F01257E456300EEB5C5 /* Products */;
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */,
+				C90DAB652585066500B402A6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +268,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C90DAB672585066500B402A6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90DAB662585066500B402A6 /* en */,
+				C90DAB682585069900B402A6 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		00BE6F0F257E456300EEB5C5 /* Debug */ = {
