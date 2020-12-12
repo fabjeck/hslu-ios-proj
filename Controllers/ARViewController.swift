@@ -28,15 +28,10 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         let textWidth: CGFloat = 300
         let constraints = CGSize(width: textWidth, height: .greatestFiniteMagnitude)
         let rect = attributedString.boundingRect(with: constraints, options: .usesLineFragmentOrigin, context: nil)
-        let aspectRatio: CGFloat = textWidth / rect.height
         
-        let boxWidth: CGFloat = 0.15
-        let boxHeight: CGFloat = boxWidth / aspectRatio
-        let box = SCNBox(width: boxWidth, height: boxHeight, length: 0.01, chamferRadius: 0.2)
-        
-        let padding: CGFloat = 20
+        let padding: CGFloat = 30
         let imageWidth: CGFloat = (2 * padding) + textWidth
-        let imageHeight: CGFloat = imageWidth / aspectRatio
+        let imageHeight: CGFloat = (2 * padding) + rect.height
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: imageWidth, height: imageHeight))
         let image = renderer.image { context in
             UIColor.white.setFill()
@@ -44,6 +39,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             
             attributedString.draw(with: CGRect(x: padding, y: padding, width: textWidth, height: rect.height), options: .usesLineFragmentOrigin, context: nil)
         }
+        
+        let aspectRatio: CGFloat = imageWidth / imageHeight
+        let boxWidth: CGFloat = 0.15
+        let boxHeight: CGFloat = boxWidth / aspectRatio
+        let box = SCNBox(width: boxWidth, height: boxHeight, length: 0.01, chamferRadius: 0)
         
         let material = SCNMaterial()
         material.diffuse.contents = UIColor.white
@@ -68,7 +68,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         arView.delegate = self
-        arView.scene.rootNode.addChildNode(createMessageNode("Swift's strings are great for storing plain text, but as soon as you want formatting, images, or interactivity you need to reach for NSAttributedString - Foundation’s all-in-one string handling class. These are used in various places in iOS and macOS, but you're most likely to want to use them with UILabel and UITextView, both of which accept attributed strings directly."))
     }
     
     override func viewWillAppear(_ animated: Bool) {

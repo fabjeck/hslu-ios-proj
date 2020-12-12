@@ -11,7 +11,7 @@
 		0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */; };
 		0059423525838103002B1E25 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423325838103002B1E25 /* Message+CoreDataClass.swift */; };
 		0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423425838103002B1E25 /* Message+CoreDataProperties.swift */; };
-		00594238258385E0002B1E25 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00594237258385E0002B1E25 /* LocationService.swift */; };
+		0061EBBC2584CA1E00C7D4F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061EBBB2584CA1E00C7D4F2 /* LocationManager.swift */; };
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
 		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
 		00C27919257E7F33001CF6DE /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C27918257E7F33001CF6DE /* ARView.swift */; };
@@ -51,7 +51,7 @@
 		0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessageModel.xcdatamodel; sourceTree = "<group>"; };
 		0059423325838103002B1E25 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0059423425838103002B1E25 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		00594237258385E0002B1E25 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0061EBBB2584CA1E00C7D4F2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		00BE6F00257E456300EEB5C5 /* ARLocationMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLocationMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00BE6F0E257E456300EEB5C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			children = (
 				C90C6CC1257FD7F600ADEE56 /* PersistanceManager.swift */,
 				0059422A258377C0002B1E25 /* MessageService.swift */,
-				00594237258385E0002B1E25 /* LocationService.swift */,
+				0061EBBB2584CA1E00C7D4F2 /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -247,12 +247,12 @@
 				0059422B258377C0002B1E25 /* MessageService.swift in Sources */,
 				00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */,
 				0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */,
+				0061EBBC2584CA1E00C7D4F2 /* LocationManager.swift in Sources */,
 				00C27930257E98FC001CF6DE /* MapView.swift in Sources */,
 				00C27923257E8DFC001CF6DE /* ARViewController.swift in Sources */,
 				00C27932257E9E6C001CF6DE /* MapViewRepresentable.swift in Sources */,
 				0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */,
 				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
-				00594238258385E0002B1E25 /* LocationService.swift in Sources */,
 				00C2793A257F7393001CF6DE /* MessageView.swift in Sources */,
 				00C27919257E7F33001CF6DE /* ARView.swift in Sources */,
 				00C27934257EAC4F001CF6DE /* ARViewControllerRepresentable.swift in Sources */,

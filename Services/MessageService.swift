@@ -11,11 +11,11 @@ import CoreData
 class MessageService {
     private init(){}
     
-    static func saveMessage(_ text: String, managedObjectContext: NSManagedObjectContext) {
+    static func saveMessage(_ text: String, location: CLLocationCoordinate2D, managedObjectContext: NSManagedObjectContext) {
         let newMessage = Message(context: managedObjectContext)
         newMessage.text = text
-        newMessage.latitude = LocationService.getUserLatitude()
-        newMessage.longitude = LocationService.getUserLongitude()
+        newMessage.latitude = location.latitude
+        newMessage.longitude = location.longitude
         
         do {
             try managedObjectContext.save()

@@ -10,6 +10,8 @@ import SwiftUI
 struct MessageView: View {
     @Environment(\.managedObjectContext) var viewContext
     
+    @EnvironmentObject var locationManager: LocationManager
+    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: String = ""
@@ -31,7 +33,7 @@ struct MessageView: View {
                 }
                 Spacer()
                 Button(action: {
-                    MessageService.saveMessage(message, managedObjectContext: viewContext)
+                    MessageService.saveMessage(message, location: locationManager.userCoordinates, managedObjectContext: viewContext)
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Speichern")

@@ -79,12 +79,6 @@ struct MapViewRepresentable: UIViewRepresentable {
         func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
             mapView.showsUserLocation = true
             mapView.userTrackingMode = .follow
-            
-            timer =  Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true)
-            {
-                (timer) in
-                LocationService.checkIfMsgInArea()
-            }
         }
         
         func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {

@@ -8,11 +8,6 @@
 import SwiftUI
 import CoreData
 
-class StoredMessageModel: ObservableObject {
-    static let sharedInstance = StoredMessageModel()
-    @Published var closestMsg: Message?
-}
-
 @main
 struct ARLocationMessagesApp: App {
     
@@ -34,6 +29,7 @@ struct ARLocationMessagesApp: App {
                         Text("AR View")
                     }
             }.environment(\.managedObjectContext, viewContext)
+            .environmentObject(LocationManager())
         }.onChange(of: scenePhase) { (phase) in
             if phase == .background {
                 PersistenceManager.saveContext()

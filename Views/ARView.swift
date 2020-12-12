@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ARView: View {
+    
     var body: some View {
         ARViewControllerRepresentable().edgesIgnoringSafeArea(.top)
     }

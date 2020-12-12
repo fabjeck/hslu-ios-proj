@@ -11,8 +11,9 @@ import Mapbox
 struct MapView: View {
     @Environment(\.managedObjectContext) var viewContext
     
+    @EnvironmentObject var locationManager: LocationManager
+    
     @ObservedObject var vm = MapViewModel()
-    @ObservedObject var globalMsg: StoredMessageModel = StoredMessageModel.sharedInstance
     
     var body: some View {
         MapViewRepresentable()
@@ -29,12 +30,12 @@ struct MapView: View {
                     .sheet(isPresented: $vm.show, content: {
                         MessageView()
                             .environment(\.managedObjectContext, viewContext)
+                            .environmentObject(locationManager)
                     })
                     Label("click here", systemImage: "arrow.down").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 20, alignment: .bottomTrailing)
                         .padding(.trailing)
                         .background(Color.green)
-                        .opacity(((self.globalMsg.closestMsg) != nil) ? 1 : 0)
-//                    Text("\(globalMsg.closesMsg?.text ?? "nil")")
+                        .opacity(!locationManager.availableMessage.isEmpty ? 1 : 0)
                 },
                 alignment: .bottom
             ).edgesIgnoringSafeArea(.top)
