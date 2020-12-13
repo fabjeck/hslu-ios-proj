@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0047214D25867B0600E1AD77 /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0047214B25867B0600E1AD77 /* MessageModel.xcdatamodeld */; };
+		0047215025867B8E00E1AD77 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047214E25867B8E00E1AD77 /* Message+CoreDataClass.swift */; };
+		0047215125867B8E00E1AD77 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0047214F25867B8E00E1AD77 /* Message+CoreDataProperties.swift */; };
 		0059422B258377C0002B1E25 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059422A258377C0002B1E25 /* MessageService.swift */; };
-		0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */; };
-		0059423525838103002B1E25 /* Message+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423325838103002B1E25 /* Message+CoreDataClass.swift */; };
-		0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059423425838103002B1E25 /* Message+CoreDataProperties.swift */; };
 		0061EBBC2584CA1E00C7D4F2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0061EBBB2584CA1E00C7D4F2 /* LocationManager.swift */; };
 		00BE6F0A257E456300EEB5C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00BE6F09257E456300EEB5C5 /* Assets.xcassets */; };
 		00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */; };
@@ -48,10 +48,10 @@
 /* Begin PBXFileReference section */
 		002B6240257E6B990068AD79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		002B6241257E6B990068AD79 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0047214C25867B0600E1AD77 /* MessageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessageModel.xcdatamodel; sourceTree = "<group>"; };
+		0047214E25867B8E00E1AD77 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0047214F25867B8E00E1AD77 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0059422A258377C0002B1E25 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
-		0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessageModel.xcdatamodel; sourceTree = "<group>"; };
-		0059423325838103002B1E25 /* Message+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0059423425838103002B1E25 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0061EBBB2584CA1E00C7D4F2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		00BE6F00257E456300EEB5C5 /* ARLocationMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARLocationMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00BE6F09257E456300EEB5C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,9 +88,9 @@
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
-				C90DAB672585066500B402A6 /* Localizable.strings */,
 				00C2790C257E7343001CF6DE /* ARLocationMessagesApp.swift */,
 				00BE6F09257E456300EEB5C5 /* Assets.xcassets */,
+				C90DAB672585066500B402A6 /* Localizable.strings */,
 				00BE6F0E257E456300EEB5C5 /* Info.plist */,
 				00C27903257E6ECA001CF6DE /* Views */,
 				00C27902257E6EBA001CF6DE /* ViewModels */,
@@ -136,9 +136,9 @@
 		00C27904257E6EF3001CF6DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0059423325838103002B1E25 /* Message+CoreDataClass.swift */,
-				0059423425838103002B1E25 /* Message+CoreDataProperties.swift */,
-				0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */,
+				0047214E25867B8E00E1AD77 /* Message+CoreDataClass.swift */,
+				0047214F25867B8E00E1AD77 /* Message+CoreDataProperties.swift */,
+				0047214B25867B0600E1AD77 /* MessageModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,18 +252,18 @@
 				C90C6CC2257FD7F600ADEE56 /* PersistanceManager.swift in Sources */,
 				0059422B258377C0002B1E25 /* MessageService.swift in Sources */,
 				00C27941257F7D5B001CF6DE /* CustomButtonStyle.swift in Sources */,
-				0059422E25837BEB002B1E25 /* MessageModel.xcdatamodeld in Sources */,
 				0061EBBC2584CA1E00C7D4F2 /* LocationManager.swift in Sources */,
 				00C27930257E98FC001CF6DE /* MapView.swift in Sources */,
 				00C27923257E8DFC001CF6DE /* ARViewController.swift in Sources */,
 				00C27932257E9E6C001CF6DE /* MapViewRepresentable.swift in Sources */,
-				0059423625838103002B1E25 /* Message+CoreDataProperties.swift in Sources */,
 				00C27911257E7626001CF6DE /* ARLocationMessagesApp.swift in Sources */,
+				0047215125867B8E00E1AD77 /* Message+CoreDataProperties.swift in Sources */,
 				00C2793A257F7393001CF6DE /* MessageView.swift in Sources */,
 				00C27919257E7F33001CF6DE /* ARView.swift in Sources */,
 				00C27934257EAC4F001CF6DE /* ARViewControllerRepresentable.swift in Sources */,
+				0047214D25867B0600E1AD77 /* MessageModel.xcdatamodeld in Sources */,
 				00C2793E257F7468001CF6DE /* MapViewModel.swift in Sources */,
-				0059423525838103002B1E25 /* Message+CoreDataClass.swift in Sources */,
+				0047215025867B8E00E1AD77 /* Message+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,12 +464,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0059422C25837BEB002B1E25 /* MessageModel.xcdatamodeld */ = {
+		0047214B25867B0600E1AD77 /* MessageModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */,
+				0047214C25867B0600E1AD77 /* MessageModel.xcdatamodel */,
 			);
-			currentVersion = 0059422D25837BEB002B1E25 /* MessageModel.xcdatamodel */;
+			currentVersion = 0047214C25867B0600E1AD77 /* MessageModel.xcdatamodel */;
 			path = MessageModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

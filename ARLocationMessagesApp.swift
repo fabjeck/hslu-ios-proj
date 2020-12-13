@@ -12,8 +12,6 @@ import CoreData
 struct ARLocationMessagesApp: App {
     
     let viewContext = PersistenceManager.persistentContainer.viewContext
-    
-    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup{
@@ -30,10 +28,6 @@ struct ARLocationMessagesApp: App {
                     }
             }.environment(\.managedObjectContext, viewContext)
             .environmentObject(LocationManager())
-        }.onChange(of: scenePhase) { (phase) in
-            if phase == .background {
-                PersistenceManager.saveContext()
-            }
         }
     }
 }

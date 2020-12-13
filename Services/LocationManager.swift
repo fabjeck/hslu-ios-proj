@@ -37,9 +37,10 @@ class LocationManager: NSObject, ObservableObject {
         let request : NSFetchRequest<Message> = Message.fetchRequest()
         do {
             let messages = try moc.fetch(request)
-            let messagesInRange = messages.filter({CLLocation(latitude: $0.longitude, longitude: $0.latitude).distance(from: location) >= 10})
+            messages.forEach {$0.distance = CLLocation(latitude: $0.longitude, longitude: $0.latitude).distance(from: location)}
+            let messagesInRange = messages.filter {$0.distance >= 5}
             if (!messagesInRange.isEmpty) {
-                let closestInRange = messagesInRange.min(by: {CLLocation(latitude: $0.longitude, longitude: $0.latitude).distance(from: location) < CLLocation(latitude: $1.longitude, longitude: $1.latitude).distance(from: location)})
+                let closestInRange = messagesInRange.min(by: {$0.distance < $1.distance})
                 return closestInRange?.text ?? ""
             } else {
                 return ""

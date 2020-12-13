@@ -7,10 +7,10 @@
   Englisch
 */
 // MapView
-"click_here" = "click here";
-"write_msg" = "write message";
+"click_here" = "Click here";
+"write_msg" = "Write message";
 // MessageView
-"save_msg" = "save";
-"write_your_message" = "write your message";
+"save_msg" = "Save";
+"write_your_message" = "Write your message...";
 "cancel" = "Cancel";
 "message" = "Message";

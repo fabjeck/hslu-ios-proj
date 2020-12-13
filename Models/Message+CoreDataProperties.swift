@@ -2,7 +2,7 @@
 //  Message+CoreDataProperties.swift
 //  ARLocationMessages
 //
-//  Created by Fabien Jeckelmann on 11.12.20.
+//  Created by Fabien Jeckelmann on 13.12.20.
 //
 //
 
@@ -17,8 +17,9 @@ extension Message {
     }
 
     @NSManaged public var text: String?
-    @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
+    @NSManaged public var distance: Double
 
 }
 

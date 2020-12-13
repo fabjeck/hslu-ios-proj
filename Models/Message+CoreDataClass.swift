@@ -2,7 +2,7 @@
 //  Message+CoreDataClass.swift
 //  ARLocationMessages
 //
-//  Created by Fabien Jeckelmann on 11.12.20.
+//  Created by Fabien Jeckelmann on 13.12.20.
 //
 //
 

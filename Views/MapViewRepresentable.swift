@@ -33,7 +33,12 @@ struct MapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MGLMapView, context: UIViewRepresentableContext<MapViewRepresentable>) {
-        updateAnnotations()
+        let annotations = messages.map({(message) -> MGLPointAnnotation in
+                                        return MGLPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: message.latitude, longitude: message.longitude))})
+        if let currentAnnotations = uiView.annotations {
+            uiView.removeAnnotations(currentAnnotations)
+        }
+        uiView.addAnnotations(annotations)
     }
     
     func makeCoordinator() -> MapViewRepresentable.Coordinator {
@@ -55,15 +60,6 @@ struct MapViewRepresentable: UIViewRepresentable {
     func zoomLevel(_ zoomLevel: Double) -> MapViewRepresentable {
         mapView.zoomLevel = zoomLevel
         return self
-    }
-    
-    private func updateAnnotations() {
-        let annotations = messages.map({(message) -> MGLPointAnnotation in
-                                        return MGLPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: message.latitude, longitude: message.longitude))})
-        if let currentAnnotations = mapView.annotations {
-            mapView.removeAnnotations(currentAnnotations)
-        }
-        mapView.addAnnotations(annotations)
     }
     
     // MARK: - MGLMapViewDelegate
