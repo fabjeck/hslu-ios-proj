@@ -8,7 +8,7 @@
 */
 // MapView
 "click_here" = "Drück hier";
-"write_msg" = "Nachricht verfassen";
+"write_msg" = "Nachricht erfassen";
 // MessageView
 "save_msg" = "Speichern";
 "write_your_message" = "Erfasse deine Nachricht...";
