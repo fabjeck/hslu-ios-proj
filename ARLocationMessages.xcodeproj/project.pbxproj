@@ -85,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009B52372586A23A0011513A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				00C27922257E8DFC001CF6DE /* ARViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		00BE6EF7257E456200EEB5C5 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +102,8 @@
 				00BE6F0E257E456300EEB5C5 /* Info.plist */,
 				00C27903257E6ECA001CF6DE /* Views */,
 				00C27902257E6EBA001CF6DE /* ViewModels */,
+				009B52372586A23A0011513A /* ViewControllers */,
 				00C27904257E6EF3001CF6DE /* Models */,
-				00C27921257E8DD4001CF6DE /* Controllers */,
 				C90C6CC0257FD7DC00ADEE56 /* Services */,
 				00C2793F257F7CD0001CF6DE /* Styles */,
 				00C2792C257E970F001CF6DE /* Frameworks */,
@@ -141,14 +149,6 @@
 				0047214B25867B0600E1AD77 /* MessageModel.xcdatamodeld */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		00C27921257E8DD4001CF6DE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				00C27922257E8DFC001CF6DE /* ARViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		00C2792C257E970F001CF6DE /* Frameworks */ = {

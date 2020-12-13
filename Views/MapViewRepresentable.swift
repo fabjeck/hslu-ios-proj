@@ -16,10 +16,7 @@ extension MGLPointAnnotation {
 }
 
 struct MapViewRepresentable: UIViewRepresentable {
-    @FetchRequest(
-        entity: Message.entity(),
-        sortDescriptors: []
-    ) var messages: FetchedResults<Message>
+    var messages: FetchedResults<Message>
     
     private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.streetsStyleURL)
     

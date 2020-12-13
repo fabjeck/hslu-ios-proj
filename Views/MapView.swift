@@ -15,8 +15,13 @@ struct MapView: View {
     
     @ObservedObject var vm = MapViewModel()
     
+    @FetchRequest(
+        entity: Message.entity(),
+        sortDescriptors: []
+    ) var messages: FetchedResults<Message>
+    
     var body: some View {
-        MapViewRepresentable()
+        MapViewRepresentable(messages: messages)
             .centerCoordinate(.init(latitude: 47.14330, longitude: 8.43238))
             .zoomLevel(9)
             .overlay(
@@ -35,7 +40,7 @@ struct MapView: View {
                     Label("click here", systemImage: "arrow.down").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 20, alignment: .bottomTrailing)
                         .padding(.trailing)
                         .background(Color.green)
-                        .opacity(!locationManager.availableMessage.isEmpty ? 1 : 0)
+                        .opacity(!locationManager.getClosestMessageInRange(messages: Array(messages)).isEmpty ? 1 : 0)
                 },
                 alignment: .bottom
             ).edgesIgnoringSafeArea(.top)

@@ -12,12 +12,12 @@ import CoreData
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
       guard let location = locations.first else { return }
-        availableMessage = getClosestMessageInRange(location)
+        self.location = location.coordinate
     }
 }
 
 class LocationManager: NSObject, ObservableObject {
-    @Published var availableMessage: String = ""
+    @Published var location = CLLocationCoordinate2D()
     
     private let locationManager = CLLocationManager()
     
@@ -28,25 +28,13 @@ class LocationManager: NSObject, ObservableObject {
         locationManager.startUpdatingLocation()
     }
     
-    lazy var userCoordinates: CLLocationCoordinate2D = {
-        return locationManager.location!.coordinate
-    }()
-    
-    private func getClosestMessageInRange(_ location: CLLocation) -> String {
-        let moc = PersistenceManager.persistentContainer.viewContext
-        let request : NSFetchRequest<Message> = Message.fetchRequest()
-        do {
-            let messages = try moc.fetch(request)
-            messages.forEach {$0.distance = CLLocation(latitude: $0.longitude, longitude: $0.latitude).distance(from: location)}
-            let messagesInRange = messages.filter {$0.distance >= 5}
-            if (!messagesInRange.isEmpty) {
-                let closestInRange = messagesInRange.min(by: {$0.distance < $1.distance})
-                return closestInRange?.text ?? ""
-            } else {
-                return ""
-            }
-        } catch {
-            print("Fetch failed: Error \(error.localizedDescription)")
+    func getClosestMessageInRange(messages: [Message]) -> String {
+        messages.forEach {$0.distance = CLLocation(latitude: $0.latitude, longitude: $0.longitude).distance(from: locationManager.location!)}
+        let messagesInRange = messages.filter {$0.distance <= 5}
+        if (!messagesInRange.isEmpty) {
+            let closestInRange = messagesInRange.min(by: {$0.distance < $1.distance})
+            return closestInRange?.text ?? ""
+        } else {
             return ""
         }
     }

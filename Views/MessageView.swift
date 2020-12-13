@@ -33,17 +33,15 @@ struct MessageView: View {
                 }
                 Spacer()
                 Button(action: {
-                    MessageService.saveMessage(message, location: locationManager.userCoordinates, managedObjectContext: viewContext)
+                    MessageService.saveMessage(message, location: locationManager.location, managedObjectContext: viewContext)
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(NSLocalizedString("save_msg", comment: ""))
                 }).buttonStyle(CustomButtonStyle(.primary))
                 .disabled(message.isEmpty)
             }.padding()
-                .navigationBarTitle(NSLocalizedString("message", comment: ""), displayMode: .large)
-                .navigationBarItems(leading: Button(NSLocalizedString("cancel", comment: "")) {
-                    presentationMode.wrappedValue.dismiss()
-                })
+            .navigationBarTitle(NSLocalizedString("message", comment: ""), displayMode: .large)
+            .navigationBarItems(leading: Button(NSLocalizedString("cancel", comment: "")) {presentationMode.wrappedValue.dismiss()})
         }
     }
 }

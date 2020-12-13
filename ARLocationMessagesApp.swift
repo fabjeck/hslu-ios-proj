@@ -12,6 +12,8 @@ import CoreData
 struct ARLocationMessagesApp: App {
     
     let viewContext = PersistenceManager.persistentContainer.viewContext
+    
+    let locationManager = LocationManager()
 
     var body: some Scene {
         WindowGroup{
@@ -27,7 +29,7 @@ struct ARLocationMessagesApp: App {
                         Text("AR View")
                     }
             }.environment(\.managedObjectContext, viewContext)
-            .environmentObject(LocationManager())
+            .environmentObject(locationManager)
         }
     }
 }
