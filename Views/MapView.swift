@@ -24,7 +24,7 @@ struct MapView: View {
                     Button(action: {
                         vm.openModal()
                     }, label: {
-                        Text("Message verfassen")
+                        Text(NSLocalizedString("write_msg", comment: ""))
                     }).buttonStyle(CustomButtonStyle(.secondary))
                     .padding()
                     .sheet(isPresented: $vm.show, content: {
@@ -32,7 +32,7 @@ struct MapView: View {
                             .environment(\.managedObjectContext, viewContext)
                             .environmentObject(locationManager)
                     })
-                    Label("click here", systemImage: "arrow.down").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 20, alignment: .bottomTrailing)
+                    Label(NSLocalizedString("click_here", comment: ""), systemImage: "arrow.down").frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 20, alignment: .bottomTrailing)
                         .padding(.trailing)
                         .background(Color.green)
                         .opacity(!locationManager.availableMessage.isEmpty ? 1 : 0)

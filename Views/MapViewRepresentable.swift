@@ -21,7 +21,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         sortDescriptors: []
     ) var messages: FetchedResults<Message>
     
-    private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.streetsStyleURL)
+    private let mapView: MGLMapView = MGLMapView(frame: .zero, styleURL: MGLStyle.satelliteStreetsStyleURL)
     
     // MARK: - UIViewRepresentable
     
